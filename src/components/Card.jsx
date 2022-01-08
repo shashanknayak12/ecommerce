@@ -9,9 +9,10 @@ function Card({ product }) {
                 {product.pro_name}
             </div>
             < div className='card-text'>
-                <p>{product.desc}</p>
+                <h5>{product.desc}</h5>
                 <p>{product.price}</p>
             </div>
+            <button className='btn btn-primary'>Add To Cart</button>
 
         </div>
     )
