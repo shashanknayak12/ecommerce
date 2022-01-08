@@ -16,11 +16,24 @@
 
 .cart-sign {
 	font-size: 2rem;
-
+	cursor: pointer;
 	margin-bottom: 0.67em;
 	margin-right: 0.67em;
 }
 
+.search-sort-wrapper {
+	background-color: #dde9e9;
+	padding: 1.5rem;
+}
+/*search section*/
+.search-text {
+	width: 25rem;
+}
+.sort-by {
+	width: 25rem;
+}
+
+/*card sction*/
 .card {
 	width: 16rem;
 	height: auto;
@@ -41,8 +54,52 @@
 	font-weight: bold;
 }
 
-.btn {
-	background-color: #f29d35;
+/*cart section*/
+
+.cart {
+	background-color: bisque;
+	width: 35%;
+	padding: 25px;
+	position: absolute;
+	right: 0px;
+	top: 80px;
+}
+.cart h4 {
+	margin-bottom: 1rem;
+	background-color: cadetblue;
+	padding: 1rem;
+}
+
+.cart-card {
+	width: auto;
+	height: auto;
+	padding: 1rem;
+	box-shadow: 1px 2px 10px 2px;
+	background-color: #fff;
+	margin-bottom: 1rem;
+}
+.cart-img-left {
+	width: 100px;
+	height: 75px;
+}
+.cart-title {
+	font-weight: 500;
+}
+.cart h5 {
+	font-weight: bold;
+	font-size: 1.1rem;
+}
+.cart-text {
+	padding-left: 50px;
+	margin-top: 1rem;
+}
+.cart p {
+	font-weight: bold;
+	font-size: 1rem;
+}
+.cart-card input {
+	width: 2.5rem;
+	margin-right: 2rem;
 }
 
 @media (prefers-reduced-motion: no-preference) {

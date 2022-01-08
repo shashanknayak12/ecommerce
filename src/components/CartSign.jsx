@@ -4,17 +4,14 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 class CartSign extends Component {
 
 
-    handleShowCart = (e) => {
-        console.log(e.target.value)
 
-    }
 
     render() {
-        const { showCart } = this.props
+        const { handleShowCart } = this.props
         return (
             <div className='cart-sign' >
                 <div>
-                    <i onClick={this.handleShowCart} value={showCart} className="fa fa-cart-plus"></i>
+                    <i onClick={handleShowCart} className="fa fa-cart-plus"></i>
 
                 </div>
             </div>

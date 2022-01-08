@@ -1,25 +1,29 @@
-import React, { Component } from 'react';
-import Card from './Card';
+import React from 'react';
+import CardList from './CardList';
 
-function ShopingContainer({ productList }) {
+import SearchSortWrap from './SearchSortWrap';
+
+
+function ShopingContainer({ productList, searchText, handleSearchText, sortBy, onSearch }) {
+
+
     return (
+        <div>
+            <div >
+                <SearchSortWrap
+                    searchText={searchText}
+                    handleSearchText={handleSearchText}
+                    sortBy={sortBy}
+                    onSearch={onSearch}
+                />
 
-        <div className='d-flex mt-4 ms-4 me-4 justify-content-between'>
-            {
-                productList.map(((product) => {
-                    return (
+            </div>
 
-                        <div key={product.pro_id} className='row'>
-                            <div className='col'>
-                                <Card product={product} />
-                            </div>
-                        </div>
+            <CardList productList={productList} />
+
+        </div>
 
 
-                    )
-                }))
-            }
-        </div >
     )
 }
 export default ShopingContainer;
