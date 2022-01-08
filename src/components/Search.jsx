@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Search extends Component {
     render() {
-        const { searchText, handleSearchText, onSearch } = this.props
+        const { searchText, handleSearchText } = this.props
         return (
             <div className="search-text">
                 <form className="d-flex">
@@ -11,7 +11,7 @@ class Search extends Component {
                         className="form-control me-2"
                         type="search"
                         value={searchText}
-                        placeholder="Search"
+                        placeholder="Search by product name"
                         aria-label="Search" />
 
                 </form>

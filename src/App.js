@@ -7,7 +7,7 @@ import ShopingContainer from './components/ShopingContainer';
 
 class App extends Component {
   state = {
-    search_text: 'Laptop',
+    search_text: '',
     showCart: false,
     sortBy: '',
     product_list: [
@@ -23,7 +23,7 @@ class App extends Component {
         pro_name: 'Mobile',
         imgURL: "https://rukminim1.flixcart.com/image/416/416/ktketu80/mobile/2/y/o/iphone-13-mlpk3hn-a-apple-original-imag6vpyur6hjngg.jpeg?q=70",
         price: `$850`,
-        desc: 'APPLE iPhone 13 (Blue, 256 GB)',
+        desc: ' iPhone 13 (Blue, 256 GB)',
       },
       {
         pro_id: 3,
@@ -37,7 +37,7 @@ class App extends Component {
         pro_name: 'Camera',
         imgURL: "https://m.media-amazon.com/images/I/914hFeTU2-L._SX679_.jpg",
         price: `$500`,
-        desc: 'APPLE Macbook Pro M1 Pro Chip',
+        desc: ' Canon ds 3000',
       },
       {
         pro_id: 5,
@@ -82,7 +82,15 @@ class App extends Component {
 
 
   render() {
-    const searchtext = this.state.product_list.desc
+    const searchRes = this.state.product_list.filter(eachItem => {
+      const searchText = eachItem.desc.toLowerCase()
+      return searchText.includes(this.state.search_text.toLowerCase())
+
+    })
+
+    const sortRes = this.state.product_list.filter(eachItem => {
+
+    })
 
     return (
       <div className="App" >
@@ -94,13 +102,15 @@ class App extends Component {
 
 
         <ShopingContainer
-          productList={this.state.product_list}
+          productList={searchRes}
           searchText={this.state.search_text}
           handleSearchText={this.handleSearchText}
           sortBy={this.state.sortBy}
 
 
+
         />
+
 
 
 

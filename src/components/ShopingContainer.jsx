@@ -20,6 +20,7 @@ function ShopingContainer({ productList, searchText, handleSearchText, sortBy, o
             </div>
 
             <CardList productList={productList} />
+            <CardList productList={productList} />
 
         </div>
 
