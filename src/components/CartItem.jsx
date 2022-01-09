@@ -26,7 +26,7 @@ class CartItem extends Component {
                 </div>
                 <div>
                     <label>
-                        Qty:<input type='number' onChange={handleQty} value={eachItem.qty} />
+                        Qty:<input type='number' onChange={(e) => handleQty(e, eachItem.pro_id)} value={eachItem.qty} />
 
                     </label>
 

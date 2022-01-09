@@ -62,14 +62,7 @@ class App extends Component {
       },
     ],
     cart_list: [
-      {
-        pro_id: 7,
-        pro_name: 'Gym',
-        imgURL: "https://rukminim1.flixcart.com/image/416/416/ktbu6q80/home-gym-combo/h/t/1/professional-metal-integrated-rubber-plates-set-with-one-3-ft-original-imag6zy67hcwa2za.jpeg?q=70",
-        price: `10950`,
-        desc: 'HRX 50 kg Professional  Rubber Plates Kit',
-        qty: 1
-      },
+
 
     ]
   }
@@ -119,14 +112,23 @@ class App extends Component {
 
     newCartList.push({ ...res, qty: 1 })
 
-    this.setState({ cart_list: newCartList })
+    this.setState({ cart_list: newCartList, showCart: true })
+
+
 
 
   }
 
-  handleQty = (e) => {
-    console.log(e.target.value)
-    this.setState({ qty: e.target.value })
+  handleQty = (e, pro_id) => {
+    const newCartList = [...this.state.cart_list]
+    for (let i = 0; i < newCartList.length; i++) {
+      if (newCartList[i].pro_id === pro_id) {
+        newCartList[i].qty = e.target.value
+      }
+    }
+
+
+    this.setState({ cart_list: newCartList })
   }
 
   render() {
