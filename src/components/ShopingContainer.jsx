@@ -4,7 +4,7 @@ import CardList from './CardList';
 import SearchSortWrap from './SearchSortWrap';
 
 
-function ShopingContainer({ productList, searchText, handleSearchText, sortBy, onSearch }) {
+function ShopingContainer({ productList, searchText, handleSearchText, sortBy, handleSort, handleAddCart }) {
 
 
     return (
@@ -14,13 +14,15 @@ function ShopingContainer({ productList, searchText, handleSearchText, sortBy, o
                     searchText={searchText}
                     handleSearchText={handleSearchText}
                     sortBy={sortBy}
-                    onSearch={onSearch}
+                    handleSort={handleSort}
                 />
 
             </div>
 
-            <CardList productList={productList} />
-            <CardList productList={productList} />
+            <CardList
+                productList={productList}
+                handleAddCart={handleAddCart}
+            />
 
         </div>
 

@@ -2,21 +2,34 @@ import React, { Component } from 'react';
 import CartItem from './CartItem';
 
 class Cart extends Component {
+    calculatePrice = (cartList) => {
+        let total = 0
+        for (let i = 0; i < cartList.length; i++) {
+            const eachCartItem = cartList[i]
+            total = total + (eachCartItem.price * eachCartItem.qty)
+        }
+
+        return total
+    }
     render() {
 
 
-        const { cartList } = this.props
+        const { cartList, handleDelete, handleQty } = this.props
+        const total = this.calculatePrice(cartList)
         return (
 
             <div className='cart'>
                 <div>
-                    <h4>Total:$1500</h4>
+                    <h4>Total:{total}</h4>
                 </div>
                 {
-                    cartList.map(item => {
+                    cartList.map((item, index) => {
                         return (
-                            <div key={item.pro_id}>
-                                <CartItem eachItem={item} />
+                            <div key={index}>
+                                <CartItem
+                                    eachItem={item}
+                                    handleDelete={() => handleDelete(index)}
+                                    handleQty={handleQty} />
                             </div>
                         )
                     })

@@ -1,17 +1,20 @@
 import React, { Component } from 'react';
 import Card from './Card';
 
-function CardList({ productList }) {
+function CardList({ productList, handleAddCart }) {
     return (
 
-        <div className='d-flex mt-4 ms-4 me-4 justify-content-between'>
+        <div className='d-flex flex-wrap mt-4 ms-4 me-4 align-items-stretch '>
             {
                 productList.map(((product) => {
                     return (
 
                         <div key={product.pro_id} className='row'>
                             <div className='col'>
-                                <Card product={product} />
+                                <Card
+                                    product={product}
+                                    handleAddCart={() => handleAddCart(product.pro_id)}
+                                />
                             </div>
                         </div>
 

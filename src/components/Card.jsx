@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-function Card({ product }) {
+function Card({ product, handleAddCart }) {
     console.log(product.imgURL)
     return (
         <div className='card'>
@@ -12,7 +12,7 @@ function Card({ product }) {
                 <h5>{product.desc}</h5>
                 <p>{product.price}</p>
             </div>
-            <button className='btn btn-primary'>Add To Cart</button>
+            <button onClick={handleAddCart} className='btn btn-primary'>Add To Cart</button>
 
         </div>
     )

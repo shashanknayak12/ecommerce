@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class CartItem extends Component {
     render() {
-        const { eachItem } = this.props
+        const { eachItem, handleDelete, handleQty } = this.props
         return (
             <div className='cart-card'>
 
@@ -26,11 +26,11 @@ class CartItem extends Component {
                 </div>
                 <div>
                     <label>
-                        Qty:<input type='number' value={eachItem.qty} />
+                        Qty:<input type='number' onChange={handleQty} value={eachItem.qty} />
 
                     </label>
 
-                    <button className='btn btn-danger'>Delete</button>
+                    <button onClick={handleDelete} className='btn btn-danger'>Delete</button>
                 </div>
 
 
