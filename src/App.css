@@ -112,10 +112,10 @@
 	margin-right: 2rem;
 }
 
-@media screen and (max-width: 670px) {
+@media screen and (max-width: 500px) {
 	.card {
-		width: 17rem;
-		margin: 1rem 5rem;
+		width: 16rem;
+		margin: 1rem 3rem;
 	}
 
 	.cart {
