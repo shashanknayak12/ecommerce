@@ -173,6 +173,7 @@ class App extends Component {
         {this.state.showCart ?
           <Cart
             cartList={this.state.cart_list}
+            showCart={this.state.showCart}
             handleDelete={this.handleDelete}
             handleQty={this.handleQty} /> : ''
         }

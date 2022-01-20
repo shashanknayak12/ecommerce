@@ -11,11 +11,14 @@ class Cart extends Component {
 
         return total
     }
+
+
     render() {
 
 
         const { cartList, handleDelete, handleQty } = this.props
         const total = this.calculatePrice(cartList)
+
         return (
 
             <div className='cart'>
